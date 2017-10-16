@@ -1,4 +1,4 @@
-# INFRA ESTRUTURA COMO CDIGO
+# INFRA ESTRUTURA COMO CODIGO
 
 Para executar tenha instalado o docker e o docker-compose
 
