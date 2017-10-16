@@ -1,0 +1,44 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.6
+    container_name: "appetcaredb"
+    hostname: "appetcaredb"
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "secret"
+      MYSQL_DATABASE: "appetcare"
+    restart: always
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "phpmyadmin"
+    hostname: "phpmyadmin"
+    ports:
+      - 8080:80
+    volumes:
+      - phpmyadmin_data:/sessions
+    environment:
+      PMA_HOST: "appetcaredb"
+      PMA_USER: "root"
+      PMA_PASSWORD: "secret"
+    restart: always
+    links:
+      - "mysql"
+  php:
+    image: php7:7
+    container_name: "composer"
+    hostname: "composer"
+    ports:
+      - 80:80
+    volumes:
+      - .:/app
+    command: install
+    restart: always
+    
+volumes:
+  mysql_data:
+  phpmyadmin_data:
+  app:
