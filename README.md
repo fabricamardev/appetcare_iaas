@@ -2,9 +2,9 @@
 
 Para executar tenha instalado o docker e o docker-compose
 
-#Instalando docker e docker-compose
+# Instalando docker e docker-compose
 
-#Docker:
+# Docker:
 Comando para instalar:
 
 wget -qO- https://get.docker.com/ | sh
@@ -17,7 +17,7 @@ Verificar versão instalada:
 
 docker --version
 
-#Docker-compose
+# Docker-compose
 
 Comando de instalação:
 
@@ -31,6 +31,7 @@ Verificar versão instalada:
 
 docker-compose --version
 
+# Rodando a estrutura como código
 
 Clone o repositorio e execute o comando:
 
